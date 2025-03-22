@@ -1,0 +1,65 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agen. pessoal | Olá, Magnata!</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+
+<body>
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <svg viewBox="0 0 24 24">
+            <path d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,1L14,4H10L12,1M4,10L1,12L4,14V10M10,23L12,20L14,23H10M23,12L20,10V14L23,12M20,4L12,11L4,4H20Z" />
+        </svg>
+    </button>
+    <div class="container">
+        <h1>Agen. pessoal | Olá, Magnata!</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="calendar-tab">Calendário</button>
+            <button class="tab-button" data-tab="list-tab">Lista</button>
+        </div>
+
+        <div id="calendar-tab" class="tab-content active">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="currentMonth"></h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div id="calendarGrid" class="calendar-grid">
+                    <!-- Calendar days will be generated here -->
+                </div>
+            </div>
+            <div class="upcoming-events">
+                <h2>Compromissos</h2>
+                <ul id="upcomingEventsList">
+                    <!-- Upcoming events will be displayed here -->
+                </ul>
+            </div>
+        </div>
+
+        <div id="list-tab" class="tab-content">
+            <div class="event-form">
+                <h2>Adicionar Evento</h2>
+                <label for="eventDate">Data de Início:</label>
+                <input type="date" id="eventDate">
+                <label for="eventEndDate">Data de Término:</label>
+                <input type="date" id="eventEndDate">
+                <input type="text" id="eventTitle" placeholder="Título do Evento">
+                <button id="addEvent">Adicionar</button>
+            </div>
+
+            <div class="events">
+                <h2>Eventos</h2>
+                <ul id="eventList">
+                    <!-- Events will be displayed here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
