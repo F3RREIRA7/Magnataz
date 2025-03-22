@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const eventDiv = document.createElement('div');
                 eventDiv.classList.add('event');
                 let eventText = event.title;
+                eventText = eventText.substring(0, 5)
                 dayDiv.appendChild(document.createTextNode("\n" + eventText));
 
                 dayDiv.appendChild(eventDiv);
@@ -346,34 +347,4 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCalendar();
     displayEvents();
     displayUpcomingEvents();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    emailjs.init("0MubLAMR-ir2wHTF9"); // Substitua pela sua Public Key
-
-    const addEventButton = document.getElementById('addEvent');
-
-    addEventButton.addEventListener('click', () => {
-        const date = document.getElementById('eventDate').value;
-        const title = document.getElementById('eventTitle').value;
-        const email = document.getElementById('eventEmail').value;
-
-        if (date && title && email) {
-            const templateParams = {
-                to_email: email,
-                event_title: title,
-                event_date: date
-            };
-
-            emailjs.send("service_vdsudgk", "template_qhhhb4g", templateParams)
-                .then(response => {
-                    alert("E-mail enviado com sucesso!");
-                })
-                .catch(error => {
-                    alert("Erro ao enviar e-mail: " + error);
-                });
-        } else {
-            
-        }
-    });
 });

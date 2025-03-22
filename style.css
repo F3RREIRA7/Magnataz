@@ -20,12 +20,12 @@ body.dark-mode {
     background-color: #fff;
     border-radius: 16px; /* Increased border-radius */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
-    padding: 40px; /* Increased padding */
-    width: 90%;
+    padding: 20px; /* Increased padding */
+    width: 95%;
     max-width: 800px; /* Further increased max-width */
     transition: background-color 0.3s, color 0.3s;
     box-sizing: border-box;
-    margin-bottom: 40px; /* Increased space below the container */
+    margin-bottom: 20px; /* Increased space below the container */
 }
 
 @media (min-width: 768px) {
@@ -45,8 +45,8 @@ h1 {
     text-align: center;
     color: #2c3e50;
     transition: color 0.3s;
-    margin-bottom: 40px; /* Further increased margin */
-    font-size: 2.5em; /* Slightly larger font size */
+    margin-bottom: 20px; /* Further increased margin */
+    font-size: 2em; /* Slightly larger font size */
     letter-spacing: 0.8px; /* Subtle letter spacing for a modern look */
     font-weight: 600; /* Bolder font weight */
 }
@@ -58,7 +58,7 @@ h1 {
 /* Tabs Styles */
 .tabs {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-bottom: 2px solid #ddd; /* Lighter border color */
     justify-content: space-around; /* Distribute tabs evenly */
 }
@@ -66,8 +66,8 @@ h1 {
 .tab-button {
     background-color: transparent;
     border: none;
-    padding: 14px 24px; /* Adjusted padding */
-    font-size: 1.15em; /* Slightly larger font size */
+    padding: 10px 16px; /* Adjusted padding */
+    font-size: 1em; /* Slightly larger font size */
     cursor: pointer;
     color: #7f8c8d;
     transition: color 0.3s, border-bottom-color 0.3s;
@@ -92,25 +92,25 @@ h1 {
 
 /* Calendar Styles */
 .calendar {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
 }
 
 .calendar-header button {
     background-color: #3498db;
     color: #fff;
     border: none;
-    padding: 12px 20px; /* Adjusted padding */
-    border-radius: 10px;
+    padding: 10px 16px; /* Adjusted padding */
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s; /* Added transform for interaction */
-    font-size: 1.1em;
+    font-size: 1em;
     outline: none; /* Remove focus outline */
 }
 
@@ -130,16 +130,16 @@ h1 {
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 12px; /* Adjusted gap */
+    gap: 8px; /* Adjusted gap */
 }
 
 .calendar-grid div {
-    padding: 14px; /* Adjusted padding */
+    padding: 10px; /* Adjusted padding */
     text-align: center;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform for interaction */
     font-weight: 500;
-    font-size: 1.05em;
+    font-size: 0.9em;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -173,28 +173,28 @@ h1 {
 
 /* Event Form Styles */
 .event-form {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .event-form label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: #555;
     font-weight: 600; /* Slightly bolder labels */
-    font-size: 1.05em;
+    font-size: 0.9em;
 }
 
 .event-form input[type="date"],
 .event-form input[type="text"],
 .event-form input[type="email"],
 .event-form textarea {
-    width: calc(100% - 24px);
-    padding: 14px; /* Adjusted padding */
-    margin-bottom: 18px; /* Adjusted margin */
+    width: calc(100% - 20px);
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 14px; /* Adjusted margin */
     border: 1px solid #bdc3c7;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 1.05em;
+    font-size: 0.9em;
     box-sizing: border-box;
     outline: none; /* Remove focus outline */
 }
@@ -219,18 +219,18 @@ h1 {
 
 .event-form textarea {
     resize: vertical;
-    min-height: 120px; /* Minimum height for the textarea */
+    min-height: 100px; /* Minimum height for the textarea */
 }
 
 .event-form button {
     background-color: #27ae60;
     color: #fff;
     border: none;
-    padding: 14px 26px; /* Adjusted padding */
-    border-radius: 10px;
+    padding: 10px 20px; /* Adjusted padding */
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s; /* Added transform for interaction */
-    font-size: 1.15em;
+    font-size: 1em;
     outline: none; /* Remove focus outline */
 }
 
@@ -255,12 +255,12 @@ h1 {
 
 .events li {
     background-color: #f0f0f0;
-    padding: 14px; /* Adjusted padding */
-    margin-bottom: 12px; /* Adjusted margin */
+    padding: 10px; /* Adjusted padding */
+    margin-bottom: 10px; /* Adjusted margin */
     border-left: 5px solid #3498db;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform for interaction */
-    font-size: 1.05em;
+    font-size: 0.9em;
     word-break: break-word;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
@@ -300,8 +300,8 @@ h1 {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 60px; /* Increased size */
-    height: 60px; /* Increased size */
+    width: 40px; /* Increased size */
+    height: 40px; /* Increased size */
     border-radius: 50%;
     background-color: #eee;
     border: none;
@@ -319,8 +319,8 @@ h1 {
 }
 
 .dark-mode-toggle svg {
-    width: 35px; /* Increased size */
-    height: 35px; /* Increased size */
+    width: 24px; /* Increased size */
+    height: 24px; /* Increased size */
     fill: #333;
     transition: fill 0.3s, transform 0.5s ease-in-out; /* Added transition */
 }
@@ -337,12 +337,12 @@ h1 {
 
 /* Upcoming Events Styles */
 .upcoming-events {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .upcoming-events h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
+    font-size: 1.3em;
+    margin-bottom: 10px;
     color: #333;
 }
 
@@ -356,10 +356,10 @@ h1 {
 }
 
 .upcoming-events li {
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-size: 1.05em;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 0.9em;
     background-color: #f0f0f0;
     transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform for interaction */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -375,7 +375,7 @@ h1 {
 }
 
 .calendar-grid .event {
-    font-size: 0.9em;
+    font-size: 0.8em;
     color: #3498db;
     margin-top: 3px;
     font-weight: normal; /* Ensure event text is not too bold */
