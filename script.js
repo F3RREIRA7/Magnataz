@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const eventDiv = document.createElement('div');
                 eventDiv.classList.add('event');
                 let eventText = event.title;
-                eventText = eventText.substring(0, 5)
                 dayDiv.appendChild(document.createTextNode("\n" + eventText));
 
                 dayDiv.appendChild(eventDiv);
