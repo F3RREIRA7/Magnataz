@@ -8,6 +8,7 @@ body {
     align-items: center;
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body.dark-mode {
@@ -17,34 +18,37 @@ body.dark-mode {
 
 .container {
     background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 20px;
+    border-radius: 16px; /* Increased border-radius */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    padding: 40px; /* Increased padding */
     width: 90%;
-    max-width: 600px;
+    max-width: 800px; /* Further increased max-width */
     transition: background-color 0.3s, color 0.3s;
     box-sizing: border-box;
+    margin-bottom: 40px; /* Increased space below the container */
 }
 
 @media (min-width: 768px) {
     .container {
-        width: 80%;
-        max-width: 800px;
+        width: 85%;
+        max-width: 1000px; /* Increased max-width for larger screens */
     }
 }
 
 .dark-mode .container {
     background-color: #303030;
     color: #eee;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1); /* Adjusted shadow for dark mode */
 }
 
 h1 {
     text-align: center;
     color: #2c3e50;
     transition: color 0.3s;
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 40px; /* Further increased margin */
+    font-size: 2.5em; /* Slightly larger font size */
+    letter-spacing: 0.8px; /* Subtle letter spacing for a modern look */
+    font-weight: 600; /* Bolder font weight */
 }
 
 .dark-mode h1 {
@@ -54,18 +58,19 @@ h1 {
 /* Tabs Styles */
 .tabs {
     display: flex;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #bdc3c7;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd; /* Lighter border color */
+    justify-content: space-around; /* Distribute tabs evenly */
 }
 
 .tab-button {
     background-color: transparent;
     border: none;
-    padding: 10px 20px;
-    font-size: 1em;
+    padding: 14px 24px; /* Adjusted padding */
+    font-size: 1.15em; /* Slightly larger font size */
     cursor: pointer;
     color: #7f8c8d;
-    transition: color 0.3s;
+    transition: color 0.3s, border-bottom-color 0.3s;
 }
 
 .tab-button:hover {
@@ -74,7 +79,7 @@ h1 {
 
 .tab-button.active {
     color: #3498db;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 3px solid #3498db; /* Thicker active tab indicator */
 }
 
 .tab-content {
@@ -87,29 +92,31 @@ h1 {
 
 /* Calendar Styles */
 .calendar {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
 }
 
 .calendar-header button {
     background-color: #3498db;
     color: #fff;
     border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 12px 20px; /* Adjusted padding */
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.3s; /* Added transform for interaction */
+    font-size: 1.1em;
+    outline: none; /* Remove focus outline */
 }
 
 .calendar-header button:hover {
     background-color: #2980b9;
+    transform: scale(1.05); /* Slight scale up on hover */
 }
 
 .dark-mode .calendar-header button {
@@ -123,24 +130,26 @@ h1 {
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
+    gap: 12px; /* Adjusted gap */
 }
 
 .calendar-grid div {
-    padding: 10px;
+    padding: 14px; /* Adjusted padding */
     text-align: center;
-    border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform for interaction */
     font-weight: 500;
-    font-size: 0.9em;
+    font-size: 1.05em;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .calendar-grid div:hover {
     background-color: #ecf0f1;
+    transform: scale(1.03); /* Slight scale up on hover */
 }
 
 .dark-mode .calendar-grid div:hover {
@@ -154,6 +163,7 @@ h1 {
 .calendar-grid div.today {
     background-color: #f39c12;
     color: #fff;
+    font-weight: bold; /* Make "Today" stand out */
 }
 
 .calendar-grid div.selected {
@@ -163,32 +173,44 @@ h1 {
 
 /* Event Form Styles */
 .event-form {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.event-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600; /* Slightly bolder labels */
+    font-size: 1.05em;
 }
 
 .event-form input[type="date"],
 .event-form input[type="text"],
+.event-form input[type="email"],
 .event-form textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
+    width: calc(100% - 24px);
+    padding: 14px; /* Adjusted padding */
+    margin-bottom: 18px; /* Adjusted margin */
     border: 1px solid #bdc3c7;
-    border-radius: 6px;
+    border-radius: 10px;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 0.9em;
+    font-size: 1.05em;
     box-sizing: border-box;
+    outline: none; /* Remove focus outline */
 }
 
 @media (min-width: 768px) {
     .event-form input[type="date"],
     .event-form input[type="text"],
+    .event-form input[type="email"],
     .event-form textarea {
-        width: calc(100% - 20px);
+        width: calc(100% - 24px);
     }
 }
 
 .dark-mode .event-form input[type="date"],
 .dark-mode .event-form input[type="text"],
+.dark-mode .event-form input[type="email"],
 .dark-mode .event-form textarea {
     background-color: #454545;
     color: #fff;
@@ -197,21 +219,24 @@ h1 {
 
 .event-form textarea {
     resize: vertical;
+    min-height: 120px; /* Minimum height for the textarea */
 }
 
 .event-form button {
     background-color: #27ae60;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 14px 26px; /* Adjusted padding */
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s; /* Added transform for interaction */
+    font-size: 1.15em;
+    outline: none; /* Remove focus outline */
 }
 
 .event-form button:hover {
     background-color: #219653;
+    transform: scale(1.05); /* Slight scale up on hover */
 }
 
 .dark-mode .event-form button {
@@ -230,13 +255,18 @@ h1 {
 
 .events li {
     background-color: #f0f0f0;
-    padding: 10px;
-    margin-bottom: 8px;
+    padding: 14px; /* Adjusted padding */
+    margin-bottom: 12px; /* Adjusted margin */
     border-left: 5px solid #3498db;
-    border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 0.9em;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform for interaction */
+    font-size: 1.05em;
     word-break: break-word;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.events li:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .dark-mode .events li {
@@ -268,20 +298,20 @@ h1 {
 /* Dark Mode Toggle Button */
 .dark-mode-toggle {
     position: fixed;
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
+    top: 20px;
+    right: 20px;
+    width: 60px; /* Increased size */
+    height: 60px; /* Increased size */
     border-radius: 50%;
     background-color: #eee;
     border: none;
     cursor: pointer;
     z-index: 1000;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
 }
 
 .dark-mode .dark-mode-toggle {
@@ -289,10 +319,10 @@ h1 {
 }
 
 .dark-mode-toggle svg {
-    width: 24px;
-    height: 24px;
+    width: 35px; /* Increased size */
+    height: 35px; /* Increased size */
     fill: #333;
-    transition: fill 0.3s;
+    transition: fill 0.3s, transform 0.5s ease-in-out; /* Added transition */
 }
 
 .dark-mode .dark-mode-toggle svg {
@@ -300,14 +330,24 @@ h1 {
     transform: rotate(180deg);
 }
 
+.dark-mode-toggle:hover {
+    transform: scale(1.1); /* Slight scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
 /* Upcoming Events Styles */
 .upcoming-events {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .upcoming-events h2 {
-    font-size: 1.2em; 
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.dark-mode .upcoming-events h2 {
+    color: #fff;
 }
 
 .upcoming-events ul {
@@ -316,12 +356,17 @@ h1 {
 }
 
 .upcoming-events li {
-    padding: 8px;
-    margin-bottom: 6px;
-    border-radius: 6px;
-    font-size: 0.9em;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-size: 1.05em;
     background-color: #f0f0f0;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Added transform for interaction */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.upcoming-events li:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
 .dark-mode .upcoming-events li {
@@ -330,9 +375,10 @@ h1 {
 }
 
 .calendar-grid .event {
-    font-size: 0.7em;
+    font-size: 0.9em;
     color: #3498db;
-    margin-top: 0px;
+    margin-top: 3px;
+    font-weight: normal; /* Ensure event text is not too bold */
 }
 
 .dark-mode .calendar-grid .event {

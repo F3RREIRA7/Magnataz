@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const upcomingEventsList = document.getElementById('upcomingEventsList');
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
+    const eventEmailInput = document.getElementById('eventEmail');
 
     let currentDate = new Date();
     let selectedDate = null;
@@ -284,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const date = eventDateInput.value;
         const endDate = eventEndDateInput.value;
         const title = eventTitleInput.value;
+        const email = eventEmailInput.value;
 
         if (date && title && isValidDate(date)) {
             let newEvent = {
@@ -296,6 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 newEvent.endDate = date;
             }
             newEvent.daysOfWeek = [];
+            if (email) {
+                newEvent.email = email;
+            }
 
             events.push(newEvent);
             renderCalendar();
@@ -305,6 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
             eventDateInput.value = '';
             eventEndDateInput.value = '';
             eventTitleInput.value = '';
+            eventEmailInput.value = '';
         } else {
             alert('Por favor, preencha todos os campos com uma data válida.');
         }
@@ -340,4 +346,34 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCalendar();
     displayEvents();
     displayUpcomingEvents();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    emailjs.init("0MubLAMR-ir2wHTF9"); // Substitua pela sua Public Key
+
+    const addEventButton = document.getElementById('addEvent');
+
+    addEventButton.addEventListener('click', () => {
+        const date = document.getElementById('eventDate').value;
+        const title = document.getElementById('eventTitle').value;
+        const email = document.getElementById('eventEmail').value;
+
+        if (date && title && email) {
+            const templateParams = {
+                to_email: email,
+                event_title: title,
+                event_date: date
+            };
+
+            emailjs.send("service_vdsudgk", "template_qhhhb4g", templateParams)
+                .then(response => {
+                    alert("E-mail enviado com sucesso!");
+                })
+                .catch(error => {
+                    alert("Erro ao enviar e-mail: " + error);
+                });
+        } else {
+            
+        }
+    });
 });
